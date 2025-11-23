@@ -4,11 +4,13 @@ A robust, feature-rich terminal-based calculator built in Rust using `ratatui` f
 
 ## Features
 
--   **Full TUI Interface**: Clean split-view interface with history and input.
+-   **Full TUI Interface**: Clean split-view interface with scrollable history and input.
 -   **Math Evaluation**: Supports complex expressions, functions, and precedence.
 -   **Variables**: Assign and use variables (e.g., `x = 5`, `x * 2`).
--   **History Navigation**: Scroll through past calculations with Up/Down arrow keys.
--   **Error Highlighting**: Visual feedback for invalid expressions.
+-   **Persistent History**: Calculations are saved between sessions.
+-   **Clipboard Support**: Copy results directly to your system clipboard.
+-   **Command Mode**: Built-in commands for managing the application state.
+-   **Help System**: Integrated help popup with keybindings.
 
 ## Installation
 
@@ -30,10 +32,21 @@ cargo run
 
 ### Controls
 
--   **Type**: Enter mathematical expressions.
--   **Enter**: Evaluate expression.
--   **Up / Down**: Scroll through history.
--   **Esc**: Quit the application.
+| Key | Action |
+| --- | --- |
+| `Enter` | Evaluate expression / Run command |
+| `Up` / `Down` | Scroll through history |
+| `Ctrl+y` | Copy selected result to clipboard |
+| `?` / `F1` | Toggle help popup |
+| `Esc` | Close popup / Quit application |
+
+### Commands
+
+Commands start with a colon (`:`):
+
+-   `:clear`, `:c` - Clear history and variables.
+-   `:help`, `:h` - Show the help popup.
+-   `:quit`, `:q` - Save state and exit.
 
 ### Examples
 
